@@ -1,0 +1,9 @@
+input, button{
+    margin: 10px;
+    padding: 5px;
+}
+
+button{
+    background-color: rgb(255, 0, 166);
+    border-color: rgb(255, 0, 132) ;
+}
