@@ -1,0 +1,53 @@
+<h3 class="">Structural Directives : *ngIf, *For</h3>
+
+<!-- Div Section -->
+<div class="row pt-5">
+    <div class="col-3">
+        <div *ngIf="isDivVisible" class="bg-danger p-3 text-center">
+            <h4>Div-1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="isDiv2Visible" class="bg-danger p-3 text-center">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="num1==num2" class="bg-danger p-3 text-center">
+            <h4>Div-3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="selectedState=='USA'" class="bg-danger p-3 text-center">
+            <h4>Div-4</h4>
+        </div>
+    </div>
+</div>
+
+<!-- Operation Section -->
+<div class="row pt-5">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+    </div>
+    <div class="col-3 text-center">
+        <button (click)="toggleDiv2()" class="btn btn-success">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <div style="display:flex; align-items: center;">
+            <input type="text" [(ngModel)]="num1" placeholder="Num-1" class="width-50">
+            <input type="text" [(ngModel)]="num2" placeholder="Num-2" class="width-50">
+        </div>
+    </div>
+    <div class="col-3 text-center">
+        <div style="display: flex; align-items: center;">
+            <input [(ngModel)]="isActive" type="checkbox" class="width-50"> Click Me
+            <select [ngModel]="selectedState">
+                <option value="">Select State</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Shrilanka">Shrilanka</option>
+            </select>
+        </div>
+    </div>
+</div>
