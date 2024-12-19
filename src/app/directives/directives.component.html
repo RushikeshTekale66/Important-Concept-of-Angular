@@ -1,4 +1,4 @@
-<h3 class="">Structural Directives : *ngIf, *For</h3>
+<h3 class="">Structural Directives : *ngIf</h3>
 
 <!-- Div Section -->
 <div class="row pt-5">
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<!-- Operation Section -->
+<!-- Operation Section : *ngIf -->
 <div class="row pt-5">
     <div class="col-3 text-center">
         <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
@@ -42,7 +42,7 @@
     <div class="col-3 text-center">
         <div style="display: flex; align-items: center;">
             <input [(ngModel)]="isActive" type="checkbox" class="width-50"> Click Me
-            <select [ngModel]="selectedState">
+            <select [(ngModel)]="selectedState">
                 <option value="">Select State</option>
                 <option value="India">India</option>
                 <option value="USA">USA</option>
@@ -51,3 +51,27 @@
         </div>
     </div>
 </div>
+
+<hr>
+<!-- Operation Section : *For -->
+<h3 class="">Structural Directives : *ngFor</h3>
+ <div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <div *ngFor="let city of cityArray">{{city}}</div>
+    </div>
+    <div class="col-3">
+        <select >
+            <option *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select >
+            <option *ngFor="let stu of studentList">{{stu.id}}</option>
+        </select>
+    </div>
+ </div>

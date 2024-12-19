@@ -9,7 +9,7 @@ import {NewPipePipe} from "./new-pipe.pipe";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PipesComponent , NewPipePipe],
+  imports: [RouterOutlet, DirectivesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

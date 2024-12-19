@@ -9,23 +9,31 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './directives.component.css'
 })
 export class DirectivesComponent {
-  isDivVisible : Boolean = true;
-  isDiv2Visible : Boolean = true;
+  isDivVisible: Boolean = true;
+  isDiv2Visible: Boolean = true;
 
   num1: string = '';
-  num2 : string = '';
+  num2: string = '';
 
-  isActive : boolean = true;
-  selectedState : string = '';
+  isActive: boolean = false;
+  selectedState: string = '';
 
-  showDiv1(){
-    this.isDivVisible=true;
+  cityArray: string[] = ['Pune', 'Mumbai', 'Nagpur', 'Thane'];
+
+  studentList: any[] = [
+    { id: 1, name: "AAA", city: "Pune", isActive: false },
+    { id: 2, name: "AAA", city: "Pune", isActive: false },
+    { id: 3, name: "AAA", city: "Pune", isActive: false }
+  ]
+
+  showDiv1() {
+    this.isDivVisible = true;
   }
-  hideDiv1(){
-    this.isDivVisible=false;
+  hideDiv1() {
+    this.isDivVisible = false;
   }
 
-  toggleDiv2(){
-    this.isDiv2Visible =!this.isDiv2Visible;
+  toggleDiv2() {
+    this.isDiv2Visible = !this.isDiv2Visible;
   }
 }
