@@ -1,48 +1,48 @@
-<h3 class="">Structural Directives : *ngIf</h3>
+<h3 class="">Attribure Directives : ngClass</h3>
 
 <!-- Div Section -->
 <div class="row pt-5">
     <div class="col-3">
-        <div *ngIf="isDivVisible" class="bg-danger p-3 text-center">
+        <div class="p-3 text-center" [ngClass]="div1BgColor">
             <h4>Div-1</h4>
         </div>
     </div>
     <div class="col-3">
-        <div *ngIf="isDiv2Visible" class="bg-danger p-3 text-center">
+        <div class="bg-success p-3 text-center" [ngClass]="isActive==true? 'bg-success' : 'bg-warning'">
             <h4>Div-2</h4>
         </div>
     </div>
     <div class="col-3">
-        <div *ngIf="num1==num2" class="bg-danger p-3 text-center">
+        <div class="p-3 text-center" [ngClass]="num1==num2?'bg-secondory': 'bg-danger'">
             <h4>Div-3</h4>
         </div>
     </div>
     <div class="col-3">
-        <div *ngIf="selectedState=='USA'" class="bg-danger p-3 text-center">
+        <div class="p-3 text-center" [ngClass]="isActive1? 'bg-secondary' : 'bg-primary'">
             <h4>Div-4</h4>
         </div>
     </div>
 </div>
 
-<!-- Operation Section : *ngIf -->
+<!-- Operation Section : ngClass -->
 <div class="row pt-5">
     <div class="col-3 text-center">
-        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
-        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+        <button class="btn btn-danger" (click)="addRedClass()">Add red</button>
+        <button class="btn btn-primary mx-2" (click)="addBlueClass()">Add Blue</button>
     </div>
     <div class="col-3 text-center">
-        <button (click)="toggleDiv2()" class="btn btn-success">Toggle</button>
+        <button class="btn btn-success" (click)="toggleDiv2Class()">Toggle</button>
     </div>
     <div class="col-3 text-center">
         <div style="display:flex; align-items: center;">
-            <input type="text" [(ngModel)]="num1" placeholder="Num-1" class="width-50">
-            <input type="text" [(ngModel)]="num2" placeholder="Num-2" class="width-50">
+            <input type="text" placeholder="Num-1" [(ngModel)]="num1" class="width-50">
+            <input type="text" placeholder="Num-2" [(ngModel)]="num2" class="width-50">
         </div>
     </div>
     <div class="col-3 text-center">
         <div style="display: flex; align-items: center;">
-            <input [(ngModel)]="isActive" type="checkbox" class="width-50"> Click Me
-            <select [(ngModel)]="selectedState">
+            <input type="checkbox" class="width-50" [(ngModel)]="isActive1"> Click Me
+            <select>
                 <option value="">Select State</option>
                 <option value="India">India</option>
                 <option value="USA">USA</option>
@@ -53,25 +53,41 @@
 </div>
 
 <hr>
-<!-- Operation Section : *For -->
-<h3 class="">Structural Directives : *ngFor</h3>
- <div class="row">
-    <div class="col-3">
-        <ul>
-            <li *ngFor="let city of cityArray">{{city}}</li>
-        </ul>
+
+<!-- Operation Section : ngStyle -->
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stu of studentList">
+                    <td>{{stu.id}}</td>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.city}}</td>
+                    <td [ngStyle]="{'background-color': stu.result ? 'yellow' : 'red'}">{{stu.result ? "Pass" : "Fail"}}
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width': stu.totalMarks + '%'}">{{stu.totalMarks}}
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div class="col-3">
-        <div *ngFor="let city of cityArray">{{city}}</div>
+    <div class="col-5">
+        <div [ngStyle]="customerStyle">
+            TestDiv
+        </div>
     </div>
-    <div class="col-3">
-        <select >
-            <option *ngFor="let city of cityArray">{{city}}</option>
-        </select>
-    </div>
-    <div class="col-3">
-        <select >
-            <option *ngFor="let stu of studentList">{{stu.id}}</option>
-        </select>
-    </div>
- </div>
+</div>

@@ -9,31 +9,36 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './directives.component.css'
 })
 export class DirectivesComponent {
-  isDivVisible: Boolean = true;
-  isDiv2Visible: Boolean = true;
+  div1BgColor: string = 'bg-danger';
+  isActive: boolean = false;
 
   num1: string = '';
   num2: string = '';
 
-  isActive: boolean = false;
-  selectedState: string = '';
+  isActive1 : boolean = false;
 
-  cityArray: string[] = ['Pune', 'Mumbai', 'Nagpur', 'Thane'];
-
-  studentList: any[] = [
-    { id: 1, name: "AAA", city: "Pune", isActive: false },
-    { id: 2, name: "AAA", city: "Pune", isActive: false },
-    { id: 3, name: "AAA", city: "Pune", isActive: false }
+  studentList : any[] =[
+    {id : 1,  totalMarks : 10, name : "Rushikesh", city : "Pune", result : true},
+    {id : 2, totalMarks : 10,  name : "Rohan", city : "Pune", result : true},
+    {id : 3,  totalMarks : 30, name : "Tushar", city : "Pune", result : false},
+    {id : 4,  totalMarks : 100, name : "Ranjit", city : "Pune", result : false},
   ]
 
-  showDiv1() {
-    this.isDivVisible = true;
-  }
-  hideDiv1() {
-    this.isDivVisible = false;
+  customerStyle : any = {
+    'color':'white',
+    'background-color':'red',
+    'width':'200px',
+    'height':'200px'
   }
 
-  toggleDiv2() {
-    this.isDiv2Visible = !this.isDiv2Visible;
+  addRedClass() {
+    this.div1BgColor = "bg-danger"
+  }
+  addBlueClass() {
+    this.div1BgColor = "bg-primary"
+  }
+
+  toggleDiv2Class() {
+    this.isActive = !this.isActive;
   }
 }
