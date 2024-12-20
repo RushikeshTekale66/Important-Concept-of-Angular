@@ -1,28 +1,24 @@
 import { Routes } from '@angular/router';
-import { DirectivesComponent } from './directives/directives.component';
-import { FormModelComponent } from './form-model/form-model.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { DataBindingComponent } from './Components/data-binding/data-binding.component';
+import { IfelseComponent } from './ControlFlow/ifelse/ifelse.component';
+import { SwitchComponent } from './ControlFlow/switch/switch.component';
+import { ForComponent } from './ControlFlow/for/for.component';
+
 
 export const routes: Routes = [
     {
-        path: 'directives',
-        component: DirectivesComponent,
+        path:'if-else',
+        component:IfelseComponent
     },
     {
-        path: 'form-model',
-        component: FormModelComponent,
+        path:'for',
+        component:ForComponent
     },
     {
-        path: 'navbar',
-        component: NavbarComponent
+        path:'switch',
+        component:SwitchComponent
     },
     {
-        path: 'data-binding',
-        component: DataBindingComponent
-    },
-    {
-        path: '**',
-        redirectTo: '/directives',
+        path:'*',
+        redirectTo:'/if-else',
     }
 ];
