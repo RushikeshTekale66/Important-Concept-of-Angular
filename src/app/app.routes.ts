@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { PipeComponent } from './pipe/pipe.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 
 export const routes: Routes = [
     {
-        path:'pipe',
-        component:PipeComponent
+        path:'form',
+        component:TemplateFormComponent
     },
     {
         path:'*',
-        redirectTo:'/pipe',
+        redirectTo:'/form',
     }
 ];
