@@ -1,0 +1,36 @@
+<p>post-api works!</p>
+
+<div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Department Name</label>
+      <input type="text" [(ngModel)]="deptObj.departmentName" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <label>Logo</label>
+      <input type="text" [(ngModel)]="deptObj.departmentLogo" class="form-control">
+    </div>
+    <button class="btn btn-primary" (click)="onSave()">Save</button>
+  </div>
+
+  <div class="row bg-secondary text-white p-1">
+    Department Information
+  </div>
+
+  <table class="bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Logo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of departmentList; track $index){
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.departmentName}}</td>
+                <td>{{item.departmentLogo}}</td>
+            </tr>
+        }
+    </tbody>
+  </table>

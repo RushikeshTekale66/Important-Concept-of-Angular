@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { GetApiComponentComponent } from './get-api-component/get-api-component.component';
+import { PostApiComponent } from './post-api/post-api.component';
+
 
 
 export const routes: Routes = [
     {
         path:'api',
-        component: GetApiComponentComponent,
+        component: PostApiComponent,
     },
     {
         path:'*',
