@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { GetApiComponentComponent } from './get-api-component/get-api-component.component';
 
 
 export const routes: Routes = [
     {
-        path:'form',
-        component: ReactiveFormComponent
+        path:'api',
+        component: GetApiComponentComponent,
     },
     {
         path:'*',
-        redirectTo:'/form',
+        redirectTo:'/api',
     }
 ];
