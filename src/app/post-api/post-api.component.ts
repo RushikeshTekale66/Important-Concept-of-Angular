@@ -2,10 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DepartmentService } from '../service/department.service';
+import { AlertComponentComponent } from '../reusableComponent/alert-component/alert-component.component';
+import { ReusableButtonComponent } from '../reusableComponent/reusable-button/reusable-button.component';
 
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule],
+  imports: [AlertComponentComponent, FormsModule, ReusableButtonComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
@@ -14,6 +16,10 @@ export class PostApiComponent implements OnInit {
     "departmentId": 0,
     "departmentName": '',
     'departmentLogo': ""
+  }
+
+  getData(data : any){
+    debugger;
   }
 
   //Two ways to create department service

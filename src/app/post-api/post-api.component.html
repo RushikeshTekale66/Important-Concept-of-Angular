@@ -1,4 +1,7 @@
 <p>post-api works!</p>
+<app-alert-component [alertType]="'warning'" [message]="'Welcome to Post Api'"></app-alert-component>
+
+<app-reusable-button [btnClass]="'btn btn-warning'" (onBtnClick)="getData($event)" [btnText]="'Save Record'"></app-reusable-button>
 
 <div class="row">
   <div class="col-6">
@@ -44,6 +47,7 @@
           <td>
             <button class="btn btn-success" (click)="onEdit(item)">Edit</button>
             <button class="btn btn-danger m-1" (click)="onDelete(item.departmentId)">Delete</button>
+            <app-reusable-button [btnClass]="'btn btn-danger'" [btnText]="'Delete R'" (onBtnClick)="onDelete(item.departmentId)"></app-reusable-button>
           </td>
         </tr>
         }
