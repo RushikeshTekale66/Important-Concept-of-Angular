@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormComponent } from './form.component';
+import { LifeCycleEventComponent } from './life-cycle-event.component';
 
-describe('FormComponent', () => {
-  let component: FormComponent;
-  let fixture: ComponentFixture<FormComponent>;
+describe('LifeCycleEventComponent', () => {
+  let component: LifeCycleEventComponent;
+  let fixture: ComponentFixture<LifeCycleEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormComponent]
+      imports: [LifeCycleEventComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormComponent);
+    fixture = TestBed.createComponent(LifeCycleEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
